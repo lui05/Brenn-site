@@ -22,18 +22,22 @@ exports.handler = async function (event) {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  let data;
+  let nome, cognome, email, professione;
   try {
     const body = event.isBase64Encoded
       ? Buffer.from(event.body, 'base64').toString('utf-8')
       : event.body;
-    const params = new URLSearchParams(body);
-    data = Object.fromEntries(params.entries());
+    const payload = JSON.parse(body);
+    // Netlify Forms webhook invia i campi dentro payload.data
+    const d = payload.data || {};
+    nome = d.nome || '';
+    cognome = d.cognome || '';
+    email = d.email || '';
+    professione = d.professione || '';
   } catch (e) {
+    console.error('Parse error:', e);
     return { statusCode: 400, body: 'Bad Request' };
   }
-
-  const { nome, cognome, email, professione } = data;
   if (!email) return { statusCode: 400, body: 'Missing email' };
 
   const nomeCompleto = `${nome || ''} ${cognome || ''}`.trim() || 'Cliente';
