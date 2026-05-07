@@ -302,6 +302,13 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
   .f-row{grid-template-columns:1fr;}
   .hero-statement{font-size:clamp(44px,12vw,80px);}
 }
+@keyframes f-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.f-shake{animation:f-shake .4s ease;}
+.f-success{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;gap:16px;}
+.f-success-icon{width:56px;height:56px;border-radius:50%;background:#059669;color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;animation:f-pop .4s cubic-bezier(.175,.885,.32,1.275);}
+@keyframes f-pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+.f-success-title{font-size:22px;font-weight:700;color:var(--dark);}
+.f-success-msg{font-size:15px;color:#6b7280;}
 </style>
 </head>
 <body>
@@ -612,7 +619,7 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
         <div class="contacts">
           <div class="contact-row">
             <span class="c-label">Email</span>
-            <span class="c-value"><a href="mailto:studio@brenn.it">studio@brenn.it</a></span>
+            <span class="c-value"><a href="mailto:info@brenn.it">info@brenn.it</a></span>
           </div>
           <div class="contact-row">
             <span class="c-label">Risposta</span>
@@ -631,20 +638,20 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
         <div class="f-row">
           <div class="f-grp">
             <label class="f-lbl">Nome</label>
-            <input type="text" name="nome" class="f-inp" placeholder="Mario">
+            <input type="text" name="nome" class="f-inp" placeholder="Mario" required>
           </div>
           <div class="f-grp">
             <label class="f-lbl">Cognome</label>
-            <input type="text" name="cognome" class="f-inp" placeholder="Rossi">
+            <input type="text" name="cognome" class="f-inp" placeholder="Rossi" required>
           </div>
         </div>
         <div class="f-grp">
           <label class="f-lbl">Email professionale</label>
-          <input type="email" name="email" class="f-inp" placeholder="mario@studiorossi.it">
+          <input type="email" name="email" class="f-inp" placeholder="mario@studiorossi.it" required>
         </div>
         <div class="f-grp">
           <label class="f-lbl">Professione</label>
-          <select name="professione" class="f-sel">
+          <select name="professione" class="f-sel" required>
             <option value="" disabled selected>Seleziona</option>
             <option>Commercialista / Consulente fiscale</option>
             <option>Avvocato / Studio legale</option>
@@ -657,13 +664,14 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
         </div>
         <div class="f-grp">
           <label class="f-lbl">Ha già un sito web?</label>
-          <select name="sito_esistente" class="f-sel">
+          <select name="sito_esistente" class="f-sel" required>
             <option value="" disabled selected>Seleziona</option>
             <option>No, non ho nessun sito</option>
             <option>Sì, ma è vecchio o inadeguato</option>
             <option>Sì, ma voglio migliorarlo</option>
           </select>
         </div>
+        <div class="f-err" id="ferr" style="display:none;color:#dc2626;font-size:13px;margin-bottom:12px;">Compila tutti i campi prima di inviare.</div>
         <button type="submit" class="f-sub" id="fsub">Verifica se il tuo studio è a rischio →</button>
         </form>
       </div>
@@ -690,12 +698,47 @@ const obs = new IntersectionObserver(entries=>{
 },{threshold:.06,rootMargin:'0px 0px -24px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-document.querySelector('form[name="verifica"]').addEventListener('submit',function(){
+(function(){
+  var form=document.querySelector('form[name="verifica"]');
   var btn=document.getElementById('fsub');
-  btn.textContent='✓ Ricevuto. Ti contattiamo entro 24 ore.';
-  btn.style.background='#059669';
-  btn.disabled=true;
-});
+  var err=document.getElementById('ferr');
+  var box=document.querySelector('.form-box');
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var fields=form.querySelectorAll('[required]');
+    var ok=true;
+    fields.forEach(function(f){
+      if(!f.value.trim()||f.value===''){
+        f.style.borderColor='#dc2626';
+        ok=false;
+      } else {
+        f.style.borderColor='';
+      }
+    });
+    if(!ok){
+      err.style.display='block';
+      form.classList.add('f-shake');
+      setTimeout(function(){form.classList.remove('f-shake');},500);
+      return;
+    }
+    err.style.display='none';
+    btn.disabled=true;
+    btn.textContent='Invio in corso…';
+    fetch('/',{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(form)).toString()
+    }).then(function(){
+      box.innerHTML='<div class="f-success"><div class="f-success-icon">✓</div><div class="f-success-title">Richiesta inviata!</div><div class="f-success-msg">Ti contattiamo entro 24 ore lavorative.</div></div>';
+    }).catch(function(){
+      btn.disabled=false;
+      btn.textContent='Verifica se il tuo studio è a rischio →';
+      err.textContent='Errore nell\'invio. Riprova o scrivi a info@brenn.it';
+      err.style.display='block';
+    });
+  });
+})();
 </script>
 </body>
 </html>
