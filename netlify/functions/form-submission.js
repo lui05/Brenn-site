@@ -46,43 +46,69 @@ exports.handler = async function (event) {
   const grazie = `<!DOCTYPE html>
 <html lang="it">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f5f5f4;font-family:'Helvetica Neue',Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f4;padding:40px 0;">
+<body style="margin:0;padding:0;background:#f5f5f5;font-family:'Helvetica Neue',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:40px 16px;">
     <tr><td align="center">
-      <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:4px;overflow:hidden;max-width:560px;width:100%;">
+      <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #0a0a0a;max-width:560px;width:100%;">
+
         <!-- Header -->
         <tr>
-          <td style="background:#111111;padding:32px 40px;">
-            <img src="https://brenn.it/logo.png" alt="Brenn" style="height:32px;width:32px;border-radius:3px;display:block;">
+          <td style="background:#0a0a0a;padding:24px 40px;border-bottom:3px solid #1651C8;">
+            <table cellpadding="0" cellspacing="0"><tr>
+              <td style="padding-right:12px;vertical-align:middle;">
+                <img src="https://brenn.it/logo.png" alt="Brenn" style="height:28px;width:28px;border-radius:3px;display:block;">
+              </td>
+              <td style="vertical-align:middle;">
+                <span style="font-family:'Arial Narrow',Arial,sans-serif;font-size:15px;font-weight:700;color:#ffffff;letter-spacing:0.12em;text-transform:uppercase;">BRENN CONSULTING</span>
+              </td>
+            </tr></table>
           </td>
         </tr>
+
+        <!-- Eyebrow -->
+        <tr>
+          <td style="padding:32px 40px 0;">
+            <p style="margin:0 0 16px;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#1651C8;">
+              &#8212;&nbsp; Richiesta ricevuta
+            </p>
+            <p style="margin:0 0 24px;font-family:'Arial Narrow',Arial,sans-serif;font-size:36px;font-weight:700;color:#0a0a0a;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;">
+              Ciao ${nomeCompleto},<br>ci siamo.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr><td style="padding:0 40px;"><div style="height:1px;background:#e0e0e0;"></div></td></tr>
+
         <!-- Body -->
         <tr>
-          <td style="padding:40px;">
-            <p style="margin:0 0 24px;font-size:26px;font-weight:700;color:#111111;line-height:1.2;">
-              Ciao ${nomeCompleto},<br>abbiamo ricevuto la tua richiesta.
+          <td style="padding:28px 40px 32px;">
+            <p style="margin:0 0 18px;font-size:15px;font-weight:300;color:#444;line-height:1.7;">
+              Abbiamo ricevuto la tua richiesta. Il tuo studio è ora nella nostra lista: lo analizziamo personalmente e ti diciamo onestamente cosa manca — senza giri di parole.
             </p>
-            <p style="margin:0 0 20px;font-size:16px;color:#444444;line-height:1.6;">
-              Grazie per averci contattato. Il tuo studio è ora nella nostra lista e lo analizzeremo personalmente nelle prossime ore.
+            <p style="margin:0 0 28px;font-size:15px;font-weight:300;color:#444;line-height:1.7;">
+              Ti ricontattiamo entro <strong style="font-weight:600;color:#0a0a0a;">24 ore lavorative</strong>.
             </p>
-            <p style="margin:0 0 20px;font-size:16px;color:#444444;line-height:1.6;">
-              Cerchiamo il tuo studio su Google, analizziamo quello che trovano i tuoi potenziali clienti, e ti diciamo onestamente cosa manca — senza giri di parole.
-            </p>
-            <p style="margin:0 0 32px;font-size:16px;color:#444444;line-height:1.6;">
-              Ti ricontattiamo entro <strong>24 ore lavorative</strong>.
-            </p>
-            <hr style="border:none;border-top:1px solid #e5e7eb;margin:0 0 32px;">
-            <p style="margin:0;font-size:14px;color:#9ca3af;line-height:1.6;">
-              Per qualsiasi necessità scrivici a <a href="mailto:info@brenn.it" style="color:#111111;">info@brenn.it</a>
-            </p>
+            <!-- Info box -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;border-left:3px solid #1651C8;margin-bottom:28px;">
+              <tr><td style="padding:16px 20px;">
+                <p style="margin:0;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Cosa succede ora</p>
+                <p style="margin:0;font-size:14px;color:#0a0a0a;line-height:1.6;">Cerchiamo il tuo studio su Google, analizziamo la tua presenza online e prepariamo un report personalizzato per te.</p>
+              </td></tr>
+            </table>
           </td>
         </tr>
+
         <!-- Footer -->
         <tr>
-          <td style="background:#f9fafb;padding:24px 40px;border-top:1px solid #e5e7eb;">
-            <p style="margin:0;font-size:12px;color:#9ca3af;">© 2025 Brenn · Milano</p>
+          <td style="background:#0a0a0a;padding:20px 40px;">
+            <table width="100%" cellpadding="0" cellspacing="0"><tr>
+              <td><p style="margin:0;font-size:11px;color:#888;letter-spacing:0.08em;">© 2026 BRENN CONSULTING · MILANO</p></td>
+              <td align="right"><a href="mailto:info@brenn.it" style="font-size:11px;color:#888;letter-spacing:0.08em;text-decoration:none;">info@brenn.it</a></td>
+            </tr></table>
           </td>
         </tr>
+
       </table>
     </td></tr>
   </table>
@@ -95,53 +121,81 @@ exports.handler = async function (event) {
   const prenota = `<!DOCTYPE html>
 <html lang="it">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f5f5f4;font-family:'Helvetica Neue',Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f4;padding:40px 0;">
+<body style="margin:0;padding:0;background:#f5f5f5;font-family:'Helvetica Neue',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:40px 16px;">
     <tr><td align="center">
-      <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:4px;overflow:hidden;max-width:560px;width:100%;">
+      <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #0a0a0a;max-width:560px;width:100%;">
+
         <!-- Header -->
         <tr>
-          <td style="background:#111111;padding:32px 40px;">
-            <img src="https://brenn.it/logo.png" alt="Brenn" style="height:32px;width:32px;border-radius:3px;display:block;">
+          <td style="background:#0a0a0a;padding:24px 40px;border-bottom:3px solid #1651C8;">
+            <table cellpadding="0" cellspacing="0"><tr>
+              <td style="padding-right:12px;vertical-align:middle;">
+                <img src="https://brenn.it/logo.png" alt="Brenn" style="height:28px;width:28px;border-radius:3px;display:block;">
+              </td>
+              <td style="vertical-align:middle;">
+                <span style="font-family:'Arial Narrow',Arial,sans-serif;font-size:15px;font-weight:700;color:#ffffff;letter-spacing:0.12em;text-transform:uppercase;">BRENN CONSULTING</span>
+              </td>
+            </tr></table>
           </td>
         </tr>
+
+        <!-- Eyebrow -->
+        <tr>
+          <td style="padding:32px 40px 0;">
+            <p style="margin:0 0 16px;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#1651C8;">
+              &#8212;&nbsp; Il tuo slot gratuito
+            </p>
+            <p style="margin:0 0 24px;font-family:'Arial Narrow',Arial,sans-serif;font-size:36px;font-weight:700;color:#0a0a0a;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;">
+              15 minuti.<br>Nessun impegno.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr><td style="padding:0 40px;"><div style="height:1px;background:#e0e0e0;"></div></td></tr>
+
         <!-- Body -->
         <tr>
-          <td style="padding:40px;">
-            <p style="margin:0 0 24px;font-size:26px;font-weight:700;color:#111111;line-height:1.2;">
-              Prenota il tuo slot gratuito.
+          <td style="padding:28px 40px 32px;">
+            <p style="margin:0 0 18px;font-size:15px;font-weight:300;color:#444;line-height:1.7;">
+              Ciao ${nomeCompleto}, abbiamo analizzato la situazione del tuo studio e siamo pronti a mostrarti cosa trovano i tuoi potenziali clienti quando cercano ${professione ? `un ${professione.toLowerCase()}` : 'il tuo studio'} su Google.
             </p>
-            <p style="margin:0 0 20px;font-size:16px;color:#444444;line-height:1.6;">
-              Ciao ${nomeCompleto}, siamo pronti ad approfondire la situazione del tuo studio insieme a te. Abbiamo riservato uno slot di <strong>15 minuti</strong> — senza impegno.
+            <p style="margin:0 0 28px;font-size:15px;font-weight:300;color:#444;line-height:1.7;">
+              Scegli il giorno e l'orario che preferisci — ti bastano <strong style="font-weight:600;color:#0a0a0a;">15 minuti</strong>.
             </p>
-            <p style="margin:0 0 32px;font-size:16px;color:#444444;line-height:1.6;">
-              Scegli tu giorno e orario più comodi:
-            </p>
-            <!-- CTA -->
-            <table cellpadding="0" cellspacing="0" style="margin:0 0 32px;">
+
+            <!-- CTA Button -->
+            <table cellpadding="0" cellspacing="0" style="margin:0 0 28px;">
               <tr>
-                <td style="background:#111111;border-radius:4px;">
-                  <a href="${BOOKING_URL}" style="display:inline-block;padding:16px 32px;font-size:15px;font-weight:600;color:#ffffff;text-decoration:none;letter-spacing:-0.2px;">
-                    Prenota la tua verifica gratuita →
+                <td style="background:#1651C8;">
+                  <a href="${BOOKING_URL}" style="display:inline-block;padding:16px 32px;font-family:'Arial Narrow',Arial,sans-serif;font-size:14px;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;">
+                    Prenota la verifica gratuita &rarr;
                   </a>
                 </td>
               </tr>
             </table>
-            <p style="margin:0 0 20px;font-size:14px;color:#6b7280;line-height:1.6;">
-              In questi 15 minuti analizziamo insieme cosa trovano i tuoi potenziali clienti quando cercano ${professione ? `un ${professione.toLowerCase()}` : 'il tuo studio'} su Google, e ti diciamo chiaramente cosa fare.
-            </p>
-            <hr style="border:none;border-top:1px solid #e5e7eb;margin:0 0 24px;">
-            <p style="margin:0;font-size:14px;color:#9ca3af;line-height:1.6;">
-              Per qualsiasi necessità scrivici a <a href="mailto:info@brenn.it" style="color:#111111;">info@brenn.it</a>
-            </p>
+
+            <!-- Info box -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;border-left:3px solid #0a0a0a;margin-bottom:8px;">
+              <tr><td style="padding:16px 20px;">
+                <p style="margin:0;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Cosa analizziamo insieme</p>
+                <p style="margin:0;font-size:14px;color:#0a0a0a;line-height:1.6;">Presenza su Google, reputazione online, sito web esistente. Ti diciamo esattamente cosa manca e cosa fare — senza vendere nulla.</p>
+              </td></tr>
+            </table>
           </td>
         </tr>
+
         <!-- Footer -->
         <tr>
-          <td style="background:#f9fafb;padding:24px 40px;border-top:1px solid #e5e7eb;">
-            <p style="margin:0;font-size:12px;color:#9ca3af;">© 2025 Brenn · Milano</p>
+          <td style="background:#0a0a0a;padding:20px 40px;">
+            <table width="100%" cellpadding="0" cellspacing="0"><tr>
+              <td><p style="margin:0;font-size:11px;color:#888;letter-spacing:0.08em;">© 2026 BRENN CONSULTING · MILANO</p></td>
+              <td align="right"><a href="mailto:info@brenn.it" style="font-size:11px;color:#888;letter-spacing:0.08em;text-decoration:none;">info@brenn.it</a></td>
+            </tr></table>
           </td>
         </tr>
+
       </table>
     </td></tr>
   </table>
