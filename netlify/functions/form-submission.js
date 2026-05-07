@@ -1,5 +1,5 @@
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const BOOKING_URL = process.env.BOOKING_URL || 'https://cal.com/brenn'; // aggiorna in Netlify env vars
+const BOOKING_URL = process.env.BOOKING_URL || 'https://cal.eu/brenn-consulting-hiea8z/15min';
 
 async function sendEmail(payload) {
   const res = await fetch('https://api.resend.com/emails', {
