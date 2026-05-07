@@ -1,3 +1,9 @@
 [build]
   command = "npx @11ty/eleventy"
   publish = "_site"
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "18"

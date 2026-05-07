@@ -148,25 +148,45 @@ exports.handler = async function (event) {
 </body>
 </html>`;
 
+  let errors = [];
+
   try {
-    await Promise.all([
-      sendEmail({
-        from: 'Brenn <info@brenn.it>',
-        to: email,
-        subject: 'Abbiamo ricevuto la tua richiesta — Brenn',
-        html: grazie,
-      }),
-      sendEmail({
+    await sendEmail({
+      from: 'Brenn <info@brenn.it>',
+      to: email,
+      subject: 'Abbiamo ricevuto la tua richiesta — Brenn',
+      html: grazie,
+    });
+    console.log('Email ringraziamento inviata a', email);
+  } catch (e) {
+    console.error('Errore email ringraziamento:', e.message);
+    errors.push(e.message);
+  }
+
+  try {
+    await sendEmail({
+      from: 'Brenn <info@brenn.it>',
+      to: email,
+      subject: 'Prenota il tuo slot gratuito — Brenn',
+      html: prenota,
+      scheduled_at: quindiciMin,
+    });
+    console.log('Email prenotazione programmata per', quindiciMin);
+  } catch (e) {
+    // Se scheduled_at non è supportato, invia subito
+    try {
+      await sendEmail({
         from: 'Brenn <info@brenn.it>',
         to: email,
         subject: 'Prenota il tuo slot gratuito — Brenn',
         html: prenota,
-        scheduled_at: quindiciMin,
-      }),
-    ]);
-    return { statusCode: 200, body: 'OK' };
-  } catch (e) {
-    console.error(e);
-    return { statusCode: 500, body: 'Email error' };
+      });
+      console.log('Email prenotazione inviata subito (fallback)');
+    } catch (e2) {
+      console.error('Errore email prenotazione:', e2.message);
+      errors.push(e2.message);
+    }
   }
+
+  return { statusCode: 200, body: errors.length ? 'Partial: ' + errors.join('; ') : 'OK' };
 };
