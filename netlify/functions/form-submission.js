@@ -90,7 +90,7 @@ exports.handler = async function (event) {
               Ti ricontattiamo entro <strong style="font-weight:600;color:#0a0a0a;">24 ore lavorative</strong>.
             </p>
             <!-- Info box -->
-            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;border-left:3px solid #1651C8;margin-bottom:28px;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;border-left:3px solid #0a0a0a;margin-bottom:28px;">
               <tr><td style="padding:16px 20px;">
                 <p style="margin:0;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Cosa succede ora</p>
                 <p style="margin:0;font-size:14px;color:#0a0a0a;line-height:1.6;">Cerchiamo il tuo studio su Google, analizziamo la tua presenza online e prepariamo un report personalizzato per te.</p>
@@ -144,10 +144,10 @@ exports.handler = async function (event) {
         <tr>
           <td style="padding:32px 40px 0;">
             <p style="margin:0 0 16px;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#1651C8;">
-              &#8212;&nbsp; Il tuo slot gratuito
+              &#8212;&nbsp; Cesare @ Brenn
             </p>
             <p style="margin:0 0 24px;font-family:'Arial Narrow',Arial,sans-serif;font-size:36px;font-weight:700;color:#0a0a0a;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;">
-              15 minuti.<br>Nessun impegno.
+              Ho guardato<br>il tuo studio.
             </p>
           </td>
         </tr>
@@ -159,10 +159,13 @@ exports.handler = async function (event) {
         <tr>
           <td style="padding:28px 40px 32px;">
             <p style="margin:0 0 18px;font-size:15px;font-weight:300;color:#444;line-height:1.7;">
-              Ciao ${nomeCompleto}, abbiamo analizzato la situazione del tuo studio e siamo pronti a mostrarti cosa trovano i tuoi potenziali clienti quando cercano ${professione ? `un ${professione.toLowerCase()}` : 'il tuo studio'} su Google.
+              Ciao ${nomeCompleto}, ti scrivo io direttamente — sono <strong style="font-weight:600;color:#0a0a0a;">Cesare Finocchiaro</strong> di Brenn.
+            </p>
+            <p style="margin:0 0 18px;font-size:15px;font-weight:300;color:#444;line-height:1.7;">
+              Ho analizzato la presenza online del tuo studio e ho qualcosa di concreto da mostrarti: cosa trovano i tuoi potenziali clienti quando cercano ${professione ? `un ${professione.toLowerCase()}` : 'il tuo studio'} su Google, e cosa si può fare subito.
             </p>
             <p style="margin:0 0 28px;font-size:15px;font-weight:300;color:#444;line-height:1.7;">
-              Scegli il giorno e l'orario che preferisci — ti bastano <strong style="font-weight:600;color:#0a0a0a;">15 minuti</strong>.
+              Prenota tu stesso il giorno e l'orario — ci bastano <strong style="font-weight:600;color:#0a0a0a;">15 minuti</strong>, senza impegno.
             </p>
 
             <!-- CTA Button -->
@@ -179,8 +182,8 @@ exports.handler = async function (event) {
             <!-- Info box -->
             <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;border-left:3px solid #0a0a0a;margin-bottom:8px;">
               <tr><td style="padding:16px 20px;">
-                <p style="margin:0;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Cosa analizziamo insieme</p>
-                <p style="margin:0;font-size:14px;color:#0a0a0a;line-height:1.6;">Presenza su Google, reputazione online, sito web esistente. Ti diciamo esattamente cosa manca e cosa fare — senza vendere nulla.</p>
+                <p style="margin:0;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">In questi 15 minuti</p>
+                <p style="margin:0;font-size:14px;color:#0a0a0a;line-height:1.6;">Presenza su Google, reputazione online, sito web esistente. Ti dico esattamente cosa manca e cosa fare — senza vendere nulla.</p>
               </td></tr>
             </table>
           </td>
@@ -219,9 +222,9 @@ exports.handler = async function (event) {
 
   try {
     await sendEmail({
-      from: 'Brenn <info@brenn.it>',
+      from: 'Cesare @ Brenn <info@brenn.it>',
       to: email,
-      subject: 'Prenota il tuo slot gratuito — Brenn',
+      subject: `${nome}, ho guardato il tuo studio — Brenn`,
       html: prenota,
       scheduled_at: quindiciMin,
     });
@@ -230,9 +233,9 @@ exports.handler = async function (event) {
     // Se scheduled_at non è supportato, invia subito
     try {
       await sendEmail({
-        from: 'Brenn <info@brenn.it>',
+        from: 'Cesare @ Brenn <info@brenn.it>',
         to: email,
-        subject: 'Prenota il tuo slot gratuito — Brenn',
+        subject: `${nome}, ho guardato il tuo studio — Brenn`,
         html: prenota,
       });
       console.log('Email prenotazione inviata subito (fallback)');
