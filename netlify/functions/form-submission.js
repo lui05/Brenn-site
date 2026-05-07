@@ -53,7 +53,7 @@ exports.handler = async function (event) {
         <!-- Header -->
         <tr>
           <td style="background:#111111;padding:32px 40px;">
-            <span style="font-size:22px;font-weight:700;color:#ffffff;letter-spacing:-0.5px;">brenn.</span>
+            <img src="https://brenn.it/logo.png" alt="Brenn" style="height:32px;width:32px;border-radius:3px;display:block;">
           </td>
         </tr>
         <!-- Body -->
@@ -102,7 +102,7 @@ exports.handler = async function (event) {
         <!-- Header -->
         <tr>
           <td style="background:#111111;padding:32px 40px;">
-            <span style="font-size:22px;font-weight:700;color:#ffffff;letter-spacing:-0.5px;">brenn.</span>
+            <img src="https://brenn.it/logo.png" alt="Brenn" style="height:32px;width:32px;border-radius:3px;display:block;">
           </td>
         </tr>
         <!-- Body -->
