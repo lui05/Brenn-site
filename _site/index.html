@@ -322,6 +322,7 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
     <a href="#metodo" class="nav-link">Metodo</a>
     <a href="#pacchetti" class="nav-link">Pacchetti</a>
     <a href="#contatti" class="nav-link">Contatti</a>
+    <a href="/blog" class="nav-link">Blog</a>
   </div>
   <div class="nav-r">
     <span class="nav-live"><span class="dot"></span>2026 Live</span>
@@ -624,24 +625,26 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
         </div>
       </div>
       <div class="form-box rv">
+        <form name="verifica" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="verifica">
         <div class="form-title">Richiedi la verifica gratuita</div>
         <div class="f-row">
           <div class="f-grp">
             <label class="f-lbl">Nome</label>
-            <input type="text" class="f-inp" placeholder="Mario">
+            <input type="text" name="nome" class="f-inp" placeholder="Mario">
           </div>
           <div class="f-grp">
             <label class="f-lbl">Cognome</label>
-            <input type="text" class="f-inp" placeholder="Rossi">
+            <input type="text" name="cognome" class="f-inp" placeholder="Rossi">
           </div>
         </div>
         <div class="f-grp">
           <label class="f-lbl">Email professionale</label>
-          <input type="email" class="f-inp" placeholder="mario@studiorossi.it">
+          <input type="email" name="email" class="f-inp" placeholder="mario@studiorossi.it">
         </div>
         <div class="f-grp">
           <label class="f-lbl">Professione</label>
-          <select class="f-sel">
+          <select name="professione" class="f-sel">
             <option value="" disabled selected>Seleziona</option>
             <option>Commercialista / Consulente fiscale</option>
             <option>Avvocato / Studio legale</option>
@@ -654,14 +657,15 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
         </div>
         <div class="f-grp">
           <label class="f-lbl">Ha già un sito web?</label>
-          <select class="f-sel">
+          <select name="sito_esistente" class="f-sel">
             <option value="" disabled selected>Seleziona</option>
             <option>No, non ho nessun sito</option>
             <option>Sì, ma è vecchio o inadeguato</option>
             <option>Sì, ma voglio migliorarlo</option>
           </select>
         </div>
-        <button class="f-sub" id="fsub">Verifica se il tuo studio è a rischio →</button>
+        <button type="submit" class="f-sub" id="fsub">Verifica se il tuo studio è a rischio →</button>
+        </form>
       </div>
     </div>
   </div>
