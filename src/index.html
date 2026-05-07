@@ -690,10 +690,11 @@ const obs = new IntersectionObserver(entries=>{
 },{threshold:.06,rootMargin:'0px 0px -24px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-document.getElementById('fsub').addEventListener('click',function(){
-  this.textContent='✓ Ricevuto. Ti contattiamo entro 24 ore.';
-  this.style.background='#059669';
-  this.disabled=true;
+document.querySelector('form[name="verifica"]').addEventListener('submit',function(){
+  var btn=document.getElementById('fsub');
+  btn.textContent='✓ Ricevuto. Ti contattiamo entro 24 ore.';
+  btn.style.background='#059669';
+  btn.disabled=true;
 });
 </script>
 </body>
