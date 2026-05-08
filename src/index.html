@@ -316,8 +316,34 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
   footer{flex-direction:column;gap:14px;padding:20px 24px;text-align:center;}
 }
 @media(max-width:600px){
-  .f-row{grid-template-columns:1fr;}
+  nav{padding:0 16px;}
+  .nav-tag,.nav-sep,.nav-live{display:none;}
+  .nav-cta{padding:7px 14px;font-size:10px;}
+  .hero-inner{padding:48px 16px 0;}
   .hero-statement{font-size:clamp(44px,12vw,80px);}
+  .hero-eyebrow{font-size:10px;}
+  .hero-desc,.hero-action{padding:24px 16px;}
+  .proof-bar{padding:16px;flex-wrap:wrap;gap:6px;}
+  .proof-text{font-size:13px;}
+  .sec-inner,.solution-inner,.pricing-inner,.form-inner{padding:56px 16px;}
+  .sec-head{font-size:clamp(36px,10vw,64px);}
+  .sol-big{font-size:clamp(36px,10vw,64px);}
+  .sol-right{padding:28px 20px;}
+  .p-intro .p-big{font-size:clamp(40px,11vw,72px);}
+  .p-card{padding:28px 20px;}
+  .p-badge{left:20px;}
+  .p-price{font-size:56px;}
+  .cta-dark-inner{padding:48px 16px;}
+  .cta-big{font-size:clamp(40px,11vw,80px);}
+  .form-layout{gap:40px;}
+  .form-box{padding:24px 20px;}
+  .form-lhead{font-size:clamp(32px,10vw,60px);}
+  .f-row{grid-template-columns:1fr;}
+  .step{grid-template-columns:56px 1fr;gap:14px;}
+  .step-num{font-size:48px;}
+  .step-title{font-size:22px;}
+  footer{padding:16px;}
+  .f-right{flex-wrap:wrap;justify-content:center;gap:16px;}
 }
 @keyframes f-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
 .f-shake{animation:f-shake .4s ease;}
@@ -840,8 +866,8 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
     <span class="f-name">BRENN CONSULTING</span>
   </div>
   <div class="f-right">
-    <a href="#" class="f-lnk">Privacy</a>
-    <a href="#" class="f-lnk">Note legali</a>
+    <a href="/privacy-policy/" class="f-lnk">Privacy Policy</a>
+    <a href="/note-legali/" class="f-lnk">Note legali</a>
     <span class="f-copy">© 2026 Brenn Consulting · Engineering. Strategy. Execution.</span>
   </div>
 </footer>
