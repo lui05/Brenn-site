@@ -8,14 +8,33 @@ permalink: /blog/
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog — Brenn Consulting</title>
+<meta name="description" content="Guide pratiche sulla presenza digitale per commercialisti, avvocati, medici, psicologi e consulenti del lavoro. Scritto da Brenn Consulting.">
+<link rel="canonical" href="https://www.brenn.it/blog/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Brenn Consulting">
+<meta property="og:url" content="https://www.brenn.it/blog/">
+<meta property="og:title" content="Blog — Brenn Consulting">
+<meta property="og:description" content="Guide pratiche sulla presenza digitale per professionisti. Senza fuffa.">
+<meta property="og:image" content="https://www.brenn.it/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Brenn Consulting">
+<meta name="twitter:description" content="Guide pratiche sulla presenza digitale per professionisti. Senza fuffa.">
+<meta name="twitter:image" content="https://www.brenn.it/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Barlow',sans-serif;background:#fff;color:#0a0a0a;}
-nav{position:sticky;top:0;background:rgba(255,255,255,0.97);border-bottom:1px solid #e0e0e0;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;z-index:100;}
-.nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:.06em;text-decoration:none;color:#0a0a0a;}
-.nav-back{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#1651C8;text-decoration:none;}
-.hero{padding:80px 48px 60px;border-bottom:1px solid #0a0a0a;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:#fff;color:#0a0a0a;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+::selection{background:#0a0a0a;color:#fff;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #e0e0e0;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.nav-logo img{height:26px;width:26px;border-radius:3px;display:block;}
+.nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:.06em;color:#0a0a0a;}
+.nav-back{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#1651C8;text-decoration:none;transition:color .2s;}
+.nav-back:hover{color:#0a0a0a;}
+.hero{padding:136px 48px 60px;border-bottom:1px solid #0a0a0a;}
 .label{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#1651C8;margin-bottom:20px;}
 h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,7vw,96px);line-height:.92;letter-spacing:-.01em;}
 .grid{max-width:1400px;margin:0 auto;padding:60px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;}
@@ -24,45 +43,59 @@ h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48p
 .card-date{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#888;margin-bottom:16px;}
 .card-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;line-height:1.1;margin-bottom:12px;}
 .card-desc{font-size:14px;font-weight:300;color:#888;line-height:1.6;}
-.empty{grid-column:1/-1;padding:80px;text-align:center;font-size:18px;font-weight:300;color:#888;background:#fff;}
-@media(max-width:900px){nav{padding:0 20px;}.hero{padding:60px 20px 40px;}.grid{padding:40px 20px;grid-template-columns:1fr;}}
+footer{background:#0a0a0a;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+footer p{font-size:11px;color:#666;letter-spacing:.08em;}
+footer a{font-size:11px;color:#666;text-decoration:none;letter-spacing:.08em;transition:color .15s;}
+footer a:hover{color:#aaa;}
+@media(max-width:900px){nav{padding:0 16px;}.hero{padding:88px 20px 40px;}.grid{padding:40px 20px;grid-template-columns:1fr;}footer{padding:16px;flex-direction:column;text-align:center;}}
 </style>
 </head>
 <body>
 <nav>
-  <a href="/" class="nav-name">BRENN CONSULTING</a>
-  <a href="/" class="nav-back">← Torna al sito</a>
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="Brenn">
+    <span class="nav-name">BRENN CONSULTING</span>
+  </a>
+  <a href="/" class="nav-back">&larr; Torna al sito</a>
 </nav>
 <div class="hero">
-  <div class="label">Blog — Risorse per professionisti</div>
+  <div class="label">Blog &mdash; Risorse per professionisti</div>
   <h1>Presenza digitale.<br>Spiegata senza fuffa.</h1>
 </div>
 <div class="grid">
   <a href="/blog/sito-web-per-consulenti-del-lavoro/" class="card">
-    <div class="card-date">8 Maggio 2026 · 5 min</div>
-    <div class="card-title">Sito web per consulenti del lavoro: cosa non può mancare nel 2026.</div>
-    <div class="card-desc">Come farsi trovare dalle aziende, comunicare i servizi chiaramente e costruire credibilità online.</div>
+    <div class="card-date">8 Maggio 2026 &middot; 5 min</div>
+    <div class="card-title">Sito web per consulenti del lavoro: cosa non pu&ograve; mancare nel 2026.</div>
+    <div class="card-desc">Come farsi trovare dalle aziende, comunicare i servizi chiaramente e costruire credibilit&agrave; online.</div>
   </a>
   <a href="/blog/sito-web-per-psicologi/" class="card">
-    <div class="card-date">8 Maggio 2026 · 5 min</div>
-    <div class="card-title">Sito web per psicologi e terapeuti: cosa non può mancare nel 2026.</div>
+    <div class="card-date">8 Maggio 2026 &middot; 5 min</div>
+    <div class="card-title">Sito web per psicologi e terapeuti: cosa non pu&ograve; mancare nel 2026.</div>
     <div class="card-desc">Come trasmettere fiducia online, mostrare la specializzazione e abbattere la barriera al primo contatto.</div>
   </a>
   <a href="/blog/sito-web-per-medici/" class="card">
-    <div class="card-date">8 Maggio 2026 · 5 min</div>
-    <div class="card-title">Sito web per medici e specialisti: cosa non può mancare nel 2026.</div>
-    <div class="card-desc">Come costruire credibilità online, gestire le prenotazioni e farsi trovare dai pazienti giusti.</div>
+    <div class="card-date">8 Maggio 2026 &middot; 5 min</div>
+    <div class="card-title">Sito web per medici e specialisti: cosa non pu&ograve; mancare nel 2026.</div>
+    <div class="card-desc">Come costruire credibilit&agrave; online, gestire le prenotazioni e farsi trovare dai pazienti giusti.</div>
   </a>
   <a href="/blog/sito-web-per-avvocati/" class="card">
-    <div class="card-date">7 Maggio 2026 · 6 min</div>
-    <div class="card-title">Sito web per avvocati: cosa non può mancare nel 2026.</div>
-    <div class="card-desc">Specializzazione, credibilità online e deontologia: tutto quello che uno studio legale deve comunicare sul web.</div>
+    <div class="card-date">7 Maggio 2026 &middot; 6 min</div>
+    <div class="card-title">Sito web per avvocati: cosa non pu&ograve; mancare nel 2026.</div>
+    <div class="card-desc">Specializzazione, credibilit&agrave; online e deontologia: tutto quello che uno studio legale deve comunicare sul web.</div>
   </a>
   <a href="/blog/sito-web-per-commercialisti/" class="card">
-    <div class="card-date">7 Maggio 2026 · 6 min</div>
-    <div class="card-title">Sito web per commercialisti: cosa non può mancare nel 2026.</div>
-    <div class="card-desc">Perché il passaparola non basta più, cosa deve avere un sito professionale e quanto costa farlo bene.</div>
+    <div class="card-date">7 Maggio 2026 &middot; 6 min</div>
+    <div class="card-title">Sito web per commercialisti: cosa non pu&ograve; mancare nel 2026.</div>
+    <div class="card-desc">Perch&eacute; il passaparola non basta pi&ugrave;, cosa deve avere un sito professionale e quanto costa farlo bene.</div>
   </a>
 </div>
+<footer>
+  <p>&copy; 2026 BRENN CONSULTING &middot; MILANO</p>
+  <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+    <a href="/privacy-policy/">Privacy Policy</a>
+    <a href="/note-legali/">Note legali</a>
+    <a href="mailto:info@brenn.it">info@brenn.it</a>
+  </div>
+</footer>
 </body>
 </html>
