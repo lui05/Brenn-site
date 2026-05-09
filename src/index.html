@@ -120,18 +120,6 @@ nav{
 .ticker-i{font-family:var(--D);font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--white);padding:0 40px;display:flex;align-items:center;gap:40px;}
 .ticker-i::after{content:'·';color:var(--blue);font-size:16px;}
 
-/* SOCIAL PROOF BAR */
-.proof-bar{
-  background:var(--gray);border-bottom:1px solid var(--mid);
-  padding:24px 48px;
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  text-align:center;
-}
-.proof-text{
-  font-size:15px;font-weight:400;color:var(--black);line-height:1.5;
-}
-.proof-text strong{font-weight:700;}
-.proof-accent{color:var(--blue);font-weight:700;}
 
 /* SECTION SHARED */
 .section{border-top:1px solid var(--black);}
@@ -304,7 +292,7 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
 
 /* RESPONSIVE */
 @media(max-width:1100px){
-  nav,.hero-inner,.hero-bottom,.proof-bar,.sec-inner,.solution-inner,.pricing-inner,.cta-dark-inner,.form-inner{padding-left:24px;padding-right:24px;}
+  nav,.hero-inner,.hero-bottom,.sec-inner,.solution-inner,.pricing-inner,.cta-dark-inner,.form-inner{padding-left:24px;padding-right:24px;}
   .nav-links{display:none;}
   .hero-bottom,.sol-layout,.form-layout{grid-template-columns:1fr;}
   .hero-desc{border-right:none;border-bottom:1px solid var(--black);}
@@ -323,8 +311,6 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
   .hero-statement{font-size:clamp(44px,12vw,80px);}
   .hero-eyebrow{font-size:10px;}
   .hero-desc,.hero-action{padding:24px 16px;}
-  .proof-bar{padding:16px;flex-wrap:wrap;gap:6px;}
-  .proof-text{font-size:13px;}
   .sec-inner,.solution-inner,.pricing-inner,.form-inner{padding:56px 16px;}
   .sec-head{font-size:clamp(36px,10vw,64px);}
   .sol-big{font-size:clamp(36px,10vw,64px);}
@@ -562,12 +548,6 @@ footer{border-top:1px solid var(--black);padding:24px 48px;display:flex;align-it
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<div class="proof-bar rv">
-  <p class="proof-text">
-    Dal 2024, <strong class="proof-accent">37 studi professionali in Lombardia</strong> hanno affidato a BRENN il loro primo sito istituzionale.
-  </p>
-</div>
 
 <!-- PROBLEMA -->
 <section class="section" id="problema">
